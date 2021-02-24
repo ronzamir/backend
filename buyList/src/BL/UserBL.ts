@@ -16,7 +16,6 @@ export default class UserBL {
     return this.userDal.login(data);
   }
   public register(data: UserRegisterInput): Result<UserRegisterResponse> {
-    return this.userDal.register(data);
+     return this.userDal.register(data);
   }
-  
 }
