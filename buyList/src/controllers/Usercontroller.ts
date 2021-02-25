@@ -24,12 +24,12 @@ class UserController implements IControllerBase {
 
   login = async (req: Request, res: Response) => {
     const data = await this.userBL.login(new UserLoginInput(req.body.email, req.body.password));
-    console.log(data);
+   
     return res.status(200).json({ data });
   }
 
   register = async (req: Request, res: Response) => {
-    const data = this.userBL.register(
+    const data = await this.userBL.register(
       new UserRegisterInput(
         req.body.email,
         req.body.password,
